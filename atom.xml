@@ -4,7 +4,7 @@
   <title><![CDATA[Steve Kallestad]]></title>
   <link href="http://nevetS.github.io/atom.xml" rel="self"/>
   <link href="http://nevetS.github.io/"/>
-  <updated>2014-07-05T15:38:28-07:00</updated>
+  <updated>2014-07-05T15:55:31-07:00</updated>
   <id>http://nevetS.github.io/</id>
   <author>
     <name><![CDATA[Steve Kallestad]]></name>
@@ -88,6 +88,71 @@ categories:
 
 <pre><code>rake preview
 </code></pre>
+
+<p>OK, so that didn&rsquo;t go so well.  Turns out I need a way to run javascript from within Ruby.  Might as well install node.js.  It&rsquo;s now 3:18.  This is taking much longer than anticipated.</p>
+
+<pre><code>sudo apt-get install python g++ make checkinstall fakeroot
+src=$(mktemp -d) &amp;&amp; cd $src
+wget -N http://nodejs.org/dist/node-latest.tar.gz
+tar xzvf node-latest.tar.gz &amp;&amp; cd node-v*
+./configure
+sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -re's/.+node-v(.+)$/\1/p') make -j$(($(nproc)+1)) install
+sudo dpkg -i node_*
+</code></pre>
+
+<p>Removal of node after installing like this, by the way, is sudo dpkg -r node</p>
+
+<pre><code>sudo dpkg -i node_0.10.29-1_amd64.deb
+</code></pre>
+
+<p>OK, so now we&rsquo;re back in business.  3:26 PM</p>
+
+<pre><code>cd /back/to/site/directory
+rake generate
+rake preview
+</code></pre>
+
+<p>and point my web browser to <a href="http://linuxserver:4000/">http://linuxserver:4000/</a></p>
+
+<p>Of course, before I had to do that, I had to open up a hole in the firewall:</p>
+
+<pre><code>sudo ufw allow 4000
+sudo ufw reload
+</code></pre>
+
+<p>OK.  So it&rsquo;s 3:28 and this is ready to send to github.  This server isn&rsquo;t set up for key authentication to github just yet, so that will take a few minutes.</p>
+
+<p>I found my github ssh key, copied it into ~/.ssh/github_private_key</p>
+
+<pre><code>eval `ssh-agent -s`
+ssh-add ~/.ssh/github_private_key
+ssh git@github.com
+
+The authenticity of host 'github.com (192.30.252.130)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:12:28:2d:36:56:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.334.130' (RSA) to the list of known hosts.
+Hi nevetS! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+
+<p>It&rsquo;s now 3:35.  Now to figure out how to add my site repo to github.</p>
+
+<ol>
+<li>Create a new repo on github named yourusername.github.io</li>
+<li>have ruby do all the heavy lifting</li>
+</ol>
+
+
+<hr />
+
+<pre><code>rake setup_github_pages[git@github.com:username/username.github.io.git]
+
+rake deploy.
+</code></pre>
+
+<p>Let&rsquo;s see how that worked out.  It&rsquo;s now 3:49.</p>
+
+<p>Looks like the commit got there.  10 minutes or so before I will know if it&rsquo;s configured properly.  I do see an index.html in the root directory of the master repo, so I&rsquo;m pretty confident this is going to work.</p>
 ]]></content>
   </entry>
   
