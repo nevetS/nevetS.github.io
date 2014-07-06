@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Steve Kallestad]]></title>
+  <link href="http://nevetS.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://nevetS.github.io/"/>
+  <updated>2014-07-05T17:04:27-07:00</updated>
+  <id>http://nevetS.github.io/</id>
+  <author>
+    <name><![CDATA[Steve Kallestad]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Started]]></title>
+    <link href="http://nevetS.github.io/blog/2014/07/05/getting-started/"/>
+    <updated>2014-07-05T14:56:10-07:00</updated>
+    <id>http://nevetS.github.io/blog/2014/07/05/getting-started</id>
+    <content type="html"><![CDATA[<h3>Repository Cleanup</h3>
+
+<p>A few people have asked to see my github repository recently.  Since most of the software I&rsquo;m involved with these days is closed source there&rsquo;s not much here.  Let&rsquo;s see if I can&rsquo;t change that today.  It&rsquo;s 2:29 PM.  First step &ndash; put up a github site.</p>
+
+<p>This post is basically a walk through of how that got accomplished</p>
+
+<!-- more -->
+
+
+<p>For this, I figure the way to get started is by leveraging <a href="http://jekyllrb.com/">Jekyl</a> and <a href="http://octopress.org/">Octopress</a>.  It&rsquo;s been a LONG time since I&rsquo;ve done any ruby development and I&rsquo;m not familiar with either of these two applications/frameworks/or whatever you would call them.  I do know they work well with github static sites and I&rsquo;m hoping that they will get me up and running quickly without spending any time worrying about design right out of the gate.</p>
+
+<p>Sure enough, no ruby installed on my desired server.</p>
+
+<pre><code>sudo apt-get install ruby
+</code></pre>
+
+<p>Wrong version.</p>
+
+<pre><code>sudo apt-get remove ruby
+sudo apt-get install ruby2.1.2
+</code></pre>
+
+<p>Nothing</p>
+
+<pre><code>curl -L https://get.rvm.io | bash -s stable
+The program 'curl' is currently not installed
+</code></pre>
+
+<p>Oh boy.</p>
+
+<pre><code>sudo apt-get install curl
+curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+rvm requirements
+rvm install ruby
+</code></pre>
+
+<p>OK, that wasn&rsquo;t all that hard.  It has been a while, so I&rsquo;m pretty slow.  It&rsquo;s now 2:39.  On to installing Jekyll and Octopus.  Jekyll first:</p>
+
+<pre><code>gem install jekyll
+gem install bundler
+</code></pre>
+
+<p>OK, now on to octopress:</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git githubsite
+cd githubsite/
+bundle install
+rake install
+</code></pre>
+
+<p>Looks like I&rsquo;m almost there.  Now I just have to edit the config file&hellip; done.  2:57.</p>
+
+<p>Start my first post with:</p>
+
+<pre><code>rake new_post["Getting Started"]
+</code></pre>
+
+<p>That generates a markdown document with a little bit of what looks to be yaml at the top:</p>
+
+<pre><code>---
+layout: post
+title: "Getting Started"
+date: 2014-07-05 14:56:10 -0700
+comments: true
+categories: 
+---   
+</code></pre>
+
+<p>Yikes.  Looks like one of my systems has the wrong time.  Looking into it.  NTP synced and we&rsquo;re all good.</p>
+
+<p>Saving post.</p>
+
+<pre><code>rake preview
+</code></pre>
+
+<p>OK, so that didn&rsquo;t go so well.  Turns out I need a way to run javascript from within Ruby.  Might as well install node.js.  It&rsquo;s now 3:18.  This is taking much longer than anticipated.</p>
+
+<pre><code>sudo apt-get install python g++ make checkinstall fakeroot
+src=$(mktemp -d) &amp;&amp; cd $src
+wget -N http://nodejs.org/dist/node-latest.tar.gz
+tar xzvf node-latest.tar.gz &amp;&amp; cd node-v*
+./configure
+sudo fakeroot checkinstall -y --install=no --pkgversion $(echo $(pwd) | sed -n -re's/.+node-v(.+)$/\1/p') make -j$(($(nproc)+1)) install
+sudo dpkg -i node_*
+</code></pre>
+
+<p>Removal of node after installing like this, by the way, is sudo dpkg -r node</p>
+
+<pre><code>sudo dpkg -i node_0.10.29-1_amd64.deb
+</code></pre>
+
+<p>OK, so now we&rsquo;re back in business.  3:26 PM</p>
+
+<pre><code>cd /back/to/site/directory
+rake generate
+rake preview
+</code></pre>
+
+<p>and point my web browser to <a href="http://linuxserver:4000/">http://linuxserver:4000/</a></p>
+
+<p>Of course, before I had to do that, I had to open up a hole in the firewall:</p>
+
+<pre><code>sudo ufw allow 4000
+sudo ufw reload
+</code></pre>
+
+<p>OK.  So it&rsquo;s 3:28 and this is ready to send to github.  This server isn&rsquo;t set up for key authentication to github just yet, so that will take a few minutes.</p>
+
+<p>I found my github ssh key, copied it into ~/.ssh/github_private_key</p>
+
+<pre><code>eval `ssh-agent -s`
+ssh-add ~/.ssh/github_private_key
+ssh git@github.com
+
+The authenticity of host 'github.com (192.30.252.130)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:12:28:2d:36:56:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.334.130' (RSA) to the list of known hosts.
+Hi nevetS! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+
+<p>It&rsquo;s now 3:35.  Now to figure out how to add my site repo to github.</p>
+
+<ol>
+<li>Create a new repo on github named yourusername.github.io</li>
+<li>have ruby do all the heavy lifting</li>
+</ol>
+
+
+<hr />
+
+<pre><code>rake setup_github_pages[git@github.com:username/username.github.io.git]
+
+rake deploy.
+</code></pre>
+
+<p>Let&rsquo;s see how that worked out.  It&rsquo;s now 3:49.</p>
+
+<p>Looks like the commit got there.  10 minutes or so before I will know if it&rsquo;s configured properly.  I do see an index.html in the root directory of the master repo, so I&rsquo;m pretty confident this is going to work.</p>
+]]></content>
+  </entry>
+  
+</feed>
