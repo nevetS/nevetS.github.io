@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Dpkg | Steve Kallestad]]></title>
   <link href="http://nevetS.github.io/blog/categories/dpkg/atom.xml" rel="self"/>
   <link href="http://nevetS.github.io/"/>
-  <updated>2014-07-05T17:04:27-07:00</updated>
+  <updated>2014-07-05T18:44:10-07:00</updated>
   <id>http://nevetS.github.io/</id>
   <author>
     <name><![CDATA[Steve Kallestad]]></name>
@@ -22,12 +22,12 @@
 
 <p>A few people have asked to see my github repository recently.  Since most of the software I&rsquo;m involved with these days is closed source there&rsquo;s not much here.  Let&rsquo;s see if I can&rsquo;t change that today.  It&rsquo;s 2:29 PM.  First step &ndash; put up a github site.</p>
 
-<p>This post is basically a walk through of how that got accomplished</p>
+<p>Follow the jump to see the steps and how long it took to put together.</p>
 
 <!-- more -->
 
 
-<p>For this, I figure the way to get started is by leveraging <a href="http://jekyllrb.com/">Jekyl</a> and <a href="http://octopress.org/">Octopress</a>.  It&rsquo;s been a LONG time since I&rsquo;ve done any ruby development and I&rsquo;m not familiar with either of these two applications/frameworks/or whatever you would call them.  I do know they work well with github static sites and I&rsquo;m hoping that they will get me up and running quickly without spending any time worrying about design right out of the gate.</p>
+<p>I figure the way to get started is by leveraging <a href="http://jekyllrb.com/">Jekyl</a> and <a href="http://octopress.org/">Octopress</a>.  It&rsquo;s been a LONG time since I&rsquo;ve done any ruby development and I&rsquo;m not familiar with either of these two applications/frameworks/or whatever you would call them.  I do know they work well with github static sites and I&rsquo;m hoping that they will get me up and running quickly without spending any time worrying about design right out of the gate.</p>
 
 <p>Sure enough, no ruby installed on my desired server.</p>
 

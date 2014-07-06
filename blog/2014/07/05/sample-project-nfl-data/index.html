@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Steve Kallestad</title>
+  <title>Sample Project - NFL Data - Steve Kallestad</title>
   <meta name="author" content="Steve Kallestad">
 
   
-  <meta name="description" content="Blog Archive 2014 Sample Project - NFL Data
-Jul 05 2014 Flash Resumé
-Jul 05 2014 posted in flash, resume Getting Started
-Jul 05 2014 posted in dpkg &hellip;">
+  <meta name="description" content="I decided to put together a small project to show a little bit of code and how I might approach a given problem. For this project, I want to spend &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@ Jul 05 2014 posted in dpkg &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://nevetS.github.io/blog/archives">
+  <link rel="canonical" href="http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Steve Kallestad" type="application/atom+xml">
@@ -67,59 +64,103 @@ Jul 05 2014 posted in dpkg &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Sample Project - NFL Data</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-05T17:43:42-07:00" pubdate data-updated="true">Jul 5<sup>th</sup>, 2014</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>I decided to put together a small project to show a little bit of code and how I might approach a given problem.</p>
 
-  
-  <h2>2014</h2>
+<p>For this project, I want to spend minimal time.  The simple directive is: collect a set of play-by-play information on NFL games so that it can be analyzed later.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/07/05/sample-project-nfl-data/">Sample Project - NFL Data</a></h1>
-<time datetime="2014-07-05T17:43:42-07:00" pubdate><span class='month'>Jul</span> <span class='day'>05</span> <span class='year'>2014</span></time>
+<!-- more -->
 
 
-</article>
+<p>The first question to ask is where can I get that information.  If I head over to NFL.com and click through a few things, I end up at <a href="http://www.nfl.com/gamecenter/2013092906/2013/REG4/steelers@vikings?icampaign=GC_schedule_rr#menu=gameinfo|contentId%3A0ap2000000253076&amp;tab=analyze&amp;analyze=playbyplay">this link</a>.  On that page, I see play by play information:</p>
 
+<p><img src="/images/posts/20140705/nfl-play-by-play.jpg" alt="Play by Play" /></p>
 
+<p>The URL itself gives me all the information I need to know in order to gather as many games as I want:</p>
 
-<article>
-  
-<h1><a href="/blog/2014/07/05/flash-resume/">Flash Resumé</a></h1>
-<time datetime="2014-07-05T16:36:25-07:00" pubdate><span class='month'>Jul</span> <span class='day'>05</span> <span class='year'>2014</span></time>
+<p>Broken down:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/flash/'>flash</a>, <a class='category' href='/blog/categories/resume/'>resume</a></span>
-</footer>
+<p><img src="/images/posts/20140705/nfl-url.png" alt="URL Breakdown" /></p>
 
+<p>Unfortunately, I don&rsquo;t know the dates of all the NFL games, I don&rsquo;t know which teams played, and I don&rsquo;t know who was home and who was away.</p>
 
-</article>
+<p>I&rsquo;m going to have to find another way.  If I go back a few steps in <a href="http://www.nfl.com/schedules/2013/REG4">my navigation</a>, I get to a page that shows links to all of the games from that particular week, with navigation points to other weeks and other years.</p>
 
+<p>That&rsquo;s perfect!  I know right off the bat that I can get all of the links I need.</p>
 
+<p>There are roughly 15 games per week, 17 weeks per year, and play by play data goes back 12 years.  So that means I need to collect data from roughly 3072 pages to get all of the data I need. If I download a page every 10 seconds from the nfl.com servers it will take me about 8 &frac12; hours.  If I do it every 30 seconds, it will take me 25 &frac12; hours.  If I did it every 3 seconds, I could have it all done in 2 &frac12; hours, but that could be problematic in that I would be over-using nfl.com resources.</p>
 
-<article>
-  
-<h1><a href="/blog/2014/07/05/getting-started/">Getting Started</a></h1>
-<time datetime="2014-07-05T14:56:10-07:00" pubdate><span class='month'>Jul</span> <span class='day'>05</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/dpkg/'>dpkg</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/node-dot-js/'>node.js</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a></span>
-</footer>
-
-
-</article>
-
+<p>After a bit of inspection, the data that I&rsquo;m looking for is not contained in the HTML immediately.   When I do the scraping, I&rsquo;m going to have to use a javascript capable utility.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Steve Kallestad</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-05T17:43:42-07:00" pubdate data-updated="true">Jul 5<sup>th</sup>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data/" data-via="" data-counturl="http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/05/flash-resume/" title="Previous Post: Flash Resumé">&laquo; Flash Resumé</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

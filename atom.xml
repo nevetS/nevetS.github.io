@@ -4,7 +4,7 @@
   <title><![CDATA[Steve Kallestad]]></title>
   <link href="http://nevetS.github.io/atom.xml" rel="self"/>
   <link href="http://nevetS.github.io/"/>
-  <updated>2014-07-05T17:04:27-07:00</updated>
+  <updated>2014-07-05T18:44:10-07:00</updated>
   <id>http://nevetS.github.io/</id>
   <author>
     <name><![CDATA[Steve Kallestad]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sample Project - NFL Data]]></title>
+    <link href="http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data/"/>
+    <updated>2014-07-05T17:43:42-07:00</updated>
+    <id>http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data</id>
+    <content type="html"><![CDATA[<p>I decided to put together a small project to show a little bit of code and how I might approach a given problem.</p>
+
+<p>For this project, I want to spend minimal time.  The simple directive is: collect a set of play-by-play information on NFL games so that it can be analyzed later.</p>
+
+<!-- more -->
+
+
+<p>The first question to ask is where can I get that information.  If I head over to NFL.com and click through a few things, I end up at <a href="http://www.nfl.com/gamecenter/2013092906/2013/REG4/steelers@vikings?icampaign=GC_schedule_rr#menu=gameinfo|contentId%3A0ap2000000253076&amp;tab=analyze&amp;analyze=playbyplay">this link</a>.  On that page, I see play by play information:</p>
+
+<p><img src="http://nevetS.github.io/images/posts/20140705/nfl-play-by-play.jpg" alt="Play by Play" /></p>
+
+<p>The URL itself gives me all the information I need to know in order to gather as many games as I want:</p>
+
+<p>Broken down:</p>
+
+<p><img src="http://nevetS.github.io/images/posts/20140705/nfl-url.png" alt="URL Breakdown" /></p>
+
+<p>Unfortunately, I don&rsquo;t know the dates of all the NFL games, I don&rsquo;t know which teams played, and I don&rsquo;t know who was home and who was away.</p>
+
+<p>I&rsquo;m going to have to find another way.  If I go back a few steps in <a href="http://www.nfl.com/schedules/2013/REG4">my navigation</a>, I get to a page that shows links to all of the games from that particular week, with navigation points to other weeks and other years.</p>
+
+<p>That&rsquo;s perfect!  I know right off the bat that I can get all of the links I need.</p>
+
+<p>There are roughly 15 games per week, 17 weeks per year, and play by play data goes back 12 years.  So that means I need to collect data from roughly 3072 pages to get all of the data I need. If I download a page every 10 seconds from the nfl.com servers it will take me about 8 &frac12; hours.  If I do it every 30 seconds, it will take me 25 &frac12; hours.  If I did it every 3 seconds, I could have it all done in 2 &frac12; hours, but that could be problematic in that I would be over-using nfl.com resources.</p>
+
+<p>After a bit of inspection, the data that I&rsquo;m looking for is not contained in the HTML immediately.   When I do the scraping, I&rsquo;m going to have to use a javascript capable utility.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flash Resumé]]></title>
@@ -375,12 +409,12 @@ if(hasRightVersion) {  // if we've detected an acceptable version
 
 <p>A few people have asked to see my github repository recently.  Since most of the software I&rsquo;m involved with these days is closed source there&rsquo;s not much here.  Let&rsquo;s see if I can&rsquo;t change that today.  It&rsquo;s 2:29 PM.  First step &ndash; put up a github site.</p>
 
-<p>This post is basically a walk through of how that got accomplished</p>
+<p>Follow the jump to see the steps and how long it took to put together.</p>
 
 <!-- more -->
 
 
-<p>For this, I figure the way to get started is by leveraging <a href="http://jekyllrb.com/">Jekyl</a> and <a href="http://octopress.org/">Octopress</a>.  It&rsquo;s been a LONG time since I&rsquo;ve done any ruby development and I&rsquo;m not familiar with either of these two applications/frameworks/or whatever you would call them.  I do know they work well with github static sites and I&rsquo;m hoping that they will get me up and running quickly without spending any time worrying about design right out of the gate.</p>
+<p>I figure the way to get started is by leveraging <a href="http://jekyllrb.com/">Jekyl</a> and <a href="http://octopress.org/">Octopress</a>.  It&rsquo;s been a LONG time since I&rsquo;ve done any ruby development and I&rsquo;m not familiar with either of these two applications/frameworks/or whatever you would call them.  I do know they work well with github static sites and I&rsquo;m hoping that they will get me up and running quickly without spending any time worrying about design right out of the gate.</p>
 
 <p>Sure enough, no ruby installed on my desired server.</p>
 
