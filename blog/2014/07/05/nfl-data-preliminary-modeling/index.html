@@ -100,6 +100,13 @@
 <!-- more -->
 
 
+<p>The above diagram was drawn using <a href="http://yuml.me/diagram/nofunky/class/draw">yUML</a>:</p>
+
+<pre><code>// Preliminary data diagram
+[PageData|id:integer;url:string;timestamp:integer;status:string;category:string;body:text]-will eventually become*[note:Games]
+[Games]++-1..*&gt;[Plays] 
+</code></pre>
+
 <p>I don&rsquo;t want to spend too much time thinking about details I just don&rsquo;t know yet.  I don&rsquo;t have a purpose for the data, my directive is to collect it.</p>
 
 <p>What I know at this point is that I will want to know the URL, the timestamp for when I grabbed the data, and a status.  I know that I will be grabbing at least two different kinds of pages at this point, so I&rsquo;ve added a category.</p>
@@ -118,12 +125,7 @@
 </ul>
 
 
-<p>The above diagram was drawn using <a href="http://yuml.me/diagram/nofunky/class/draw">yUML</a>:</p>
-
-<pre><code>// Preliminary data diagram
-[PageData|id:integer;url:string;timestamp:integer;status:string;category:string;body:text]-will eventually become*[note:Games]
-[Games]++-1..*&gt;[Plays] 
-</code></pre>
+<p>I also know that I don&rsquo;t want to end up visiting the same page twice.  I could use a unique constraint.  I&rsquo;d rather not at this point.  I prefer to manage uniqueness in the workflow and allow my data store to be more fault tolerant at the moment.</p>
 </div>
 
 
@@ -149,6 +151,12 @@
 <time datetime="2014-07-05T18:45:21-07:00" pubdate data-updated="true">Jul 5<sup>th</sup>, 2014</time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/data-modeling/'>data modeling</a>, <a class='category' href='/blog/categories/nfldata/'>nfldata</a>, <a class='category' href='/blog/categories/sampleprojects/'>sampleprojects</a>
+  
+</span>
+
 
     </p>
     
@@ -166,6 +174,8 @@
         <a class="basic-alignment left" href="/blog/2014/07/05/sample-project-nfl-data/" title="Previous Post: Sample Project - NFL Data">&laquo; Sample Project - NFL Data</a>
       
       
+        <a class="basic-alignment right" href="/blog/2014/07/05/nfl-data-lets-start-scraping/" title="Next Post: NFL Data - Let's Start Scraping">NFL Data - Let's Start Scraping &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -177,6 +187,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/05/nfl-data-lets-start-scraping/">NFL Data - Let's Start Scraping</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/07/05/nfl-data-preliminary-modeling/">NFL Data - Preliminary Modeling</a>

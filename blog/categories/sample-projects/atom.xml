@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Sample Projects | Steve Kallestad]]></title>
+  <link href="http://nevetS.github.io/blog/categories/sample-projects/atom.xml" rel="self"/>
+  <link href="http://nevetS.github.io/"/>
+  <updated>2014-07-07T17:42:44-07:00</updated>
+  <id>http://nevetS.github.io/</id>
+  <author>
+    <name><![CDATA[Steve Kallestad]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sample Project - NFL Data]]></title>
+    <link href="http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data/"/>
+    <updated>2014-07-05T17:43:42-07:00</updated>
+    <id>http://nevetS.github.io/blog/2014/07/05/sample-project-nfl-data</id>
+    <content type="html"><![CDATA[<p>I decided to put together a small project to show a little bit of code and how I might approach a given problem.</p>
+
+<p>For this project, I want to spend minimal time.  The simple directive is: collect a set of play-by-play information on NFL games so that it can be analyzed later.</p>
+
+<!-- more -->
+
+
+<p>The first question to ask is where can I get that information.  If I head over to NFL.com and click through a few things, I end up at <a href="http://www.nfl.com/gamecenter/2013092906/2013/REG4/steelers@vikings?icampaign=GC_schedule_rr#menu=gameinfo|contentId%3A0ap2000000253076&amp;tab=analyze&amp;analyze=playbyplay">this link</a>.  On that page, I see play by play information:</p>
+
+<p><img src="/images/posts/20140705/nfl-play-by-play.jpg" alt="Play by Play" /></p>
+
+<p>The URL itself gives me all the information I need to know in order to gather as many games as I want:</p>
+
+<p>Broken down:</p>
+
+<p><img src="/images/posts/20140705/nfl-url.png" alt="URL Breakdown" /></p>
+
+<p>Unfortunately, I don&rsquo;t know the dates of all the NFL games, I don&rsquo;t know which teams played, and I don&rsquo;t know who was home and who was away.</p>
+
+<p>I&rsquo;m going to have to find another way.  If I go back a few steps in <a href="http://www.nfl.com/schedules/2013/REG4">my navigation</a>, I get to a page that shows links to all of the games from that particular week, with navigation points to other weeks and other years.</p>
+
+<p>That&rsquo;s perfect!  I know right off the bat that I can get all of the links I need.</p>
+
+<p>There are roughly 15 games per week, 17 weeks per year, and play by play data goes back 12 years.  So that means I need to collect data from roughly 3072 pages to get all of the data I need. If I download a page every 10 seconds from the nfl.com servers it will take me about 8 &frac12; hours.  If I do it every 30 seconds, it will take me 25 &frac12; hours.  If I did it every 3 seconds, I could have it all done in 2 &frac12; hours, but that could be problematic in that I would be over-using nfl.com resources.</p>
+
+<p>After a bit of inspection, the data that I&rsquo;m looking for is not contained in the HTML immediately.   When I do the scraping, I&rsquo;m going to have to use a javascript capable utility.</p>
+]]></content>
+  </entry>
+  
+</feed>
