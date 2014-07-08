@@ -4,7 +4,7 @@
   <title><![CDATA[Steve Kallestad]]></title>
   <link href="http://nevetS.github.io/atom.xml" rel="self"/>
   <link href="http://nevetS.github.io/"/>
-  <updated>2014-07-07T17:42:44-07:00</updated>
+  <updated>2014-07-07T19:29:33-07:00</updated>
   <id>http://nevetS.github.io/</id>
   <author>
     <name><![CDATA[Steve Kallestad]]></name>
@@ -12,6 +12,161 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[NFL Data - Game Schedule Code Snippets]]></title>
+    <link href="http://nevetS.github.io/blog/2014/07/07/nfl-data-game-schedule/"/>
+    <updated>2014-07-07T17:48:12-07:00</updated>
+    <id>http://nevetS.github.io/blog/2014/07/07/nfl-data-game-schedule</id>
+    <content type="html"><![CDATA[<p>The first category of pages to obtain are ones that contain a list of games played for any given week, along with links to the detail pages of those games.</p>
+
+<p>We are downloading each of those pages and storing the HTML source for later analysis.</p>
+
+<p>Here&rsquo;s how.</p>
+
+<!-- more -->
+
+
+<h3>Generating a queue</h3>
+
+<p>We know the addresses of the pages follow a pattern.  The first step is extracting that pattern.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="n">http:</span><span class="sr">//</span><span class="n">www</span><span class="o">.</span><span class="n">nfl</span><span class="o">.</span><span class="n">com</span><span class="sr">/schedules/</span><span class="p">{</span><span class="n">YEAR</span><span class="p">}</span><span class="o">/</span><span class="n">REG</span><span class="p">{</span><span class="n">WEEK</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s simple enough.  We just need to replace <code>{YEAR}</code> with a given year, and <code>{WEEK}</code> with a given week of the regular season.</p>
+
+<p>For this, we can use MessageFormat.  I want to be able to configure the pattern just in case I want to re-use part this code later on, so the string itself will go into a properties file.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='properties'><span class='line'><span class="na">qUrlMask</span><span class="o">=</span><span class="s">http://www.nfl.com/schedules/{0\,number\,####}/REG{1}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When using numbers with MessageFormat it will use regional settings to determine whether or not to insert commas or other punctuation into numbers.  To avoid that, we can specify a number format within the string.</p>
+
+<p>You will also notice that the commas are escaped.  Using PropertiesConfiguration from apache commons, commas are used to delineate lists.  This isn&rsquo;t a list, so I&rsquo;m escaping the string.</p>
+
+<p>The rest of the queue generation code is pretty straight forward:</p>
+
+<figure class='code'><figcaption><span>Generating a list of URLs</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">yearStart</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">yearEnd</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">gameStart</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">gameEnd</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>          <span class="n">urlQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">urlFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="k">new</span> <span class="n">Object</span><span class="o">[]</span> <span class="o">{</span><span class="n">i</span><span class="o">,</span><span class="n">j</span><span class="o">}));</span>
+</span><span class='line'>          <span class="n">queueCount</span><span class="o">++;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//results in http://www.nfl.com/schedules/2001/REG1</span>
+</span><span class='line'><span class="c1">//           http://www.nfl.com/schedules/2001/REG2</span>
+</span><span class='line'><span class="c1">//           http://www.nfl.com/schedules/2001/REG3</span>
+</span><span class='line'><span class="c1">// ...</span>
+</span><span class='line'><span class="c1">//           http://www.nfl.com/schedules/2013/REG16</span>
+</span><span class='line'><span class="c1">//           http://www.nfl.com/schedules/2013/REG17</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The queueCount variable is unnecessary.  I&rsquo;ve added a task to get rid of it in the source.</p>
+
+<p><code>urlQueue</code> is a linked list of string variables.  A stronger mechanism would be required on a larger project.  This is less than 300 pages.</p>
+
+<h3>Grabbing the pages</h3>
+
+<p>Now that we have the queue put together, how do we grab the pages?</p>
+
+<p>Selenium is pretty easy to work with for simple tasks.  In this instance all we really want to do is navigate to a given URL, make sure that the information we want is there, and save the source code.</p>
+
+<p>Selenium uses &ldquo;WebDrivers&rdquo; to get the job done.  A WebDriver (or driver) is essentially a library that will &ldquo;drive&rdquo; a given web browser.  There&rsquo;s a Firefox driver, a Chrome driver, etc.  There are even a few headless drivers available.</p>
+
+<p>We&rsquo;ll use the driver to go to a page, and then tell it to wait until the schedule is available.  We do that with a little bit of XPath and WebDriverWait.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>   <span class="c1">//This configures a WebDriverWait object to wait for up to</span>
+</span><span class='line'>   <span class="c1">// 20 seconds</span>
+</span><span class='line'>   <span class="n">WebDriverWait</span> <span class="n">wait</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WebDriverWait</span><span class="o">(</span><span class="n">driver</span><span class="o">,</span> <span class="mi">20</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="c1">//tells a driver to navigate to a given page   </span>
+</span><span class='line'>   <span class="n">driver</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">url</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="c1">//Wait until the expected condition is met</span>
+</span><span class='line'>   <span class="c1">// In this case the expected condition is that a given element is visible</span>
+</span><span class='line'>   <span class="c1">// The element is defined by an xPath</span>
+</span><span class='line'>   <span class="n">wait</span><span class="o">.</span><span class="na">until</span><span class="o">(</span><span class="n">ExpectedConditions</span><span class="o">.</span><span class="na">visibilityOfElementLocated</span><span class="o">(</span><span class="n">By</span><span class="o">.</span><span class="na">xpath</span><span class="o">(</span><span class="n">element</span><span class="o">)));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The xPath that I configured to look for is:</p>
+
+<pre><code>//div/div/div/div/div/div/div[contains(concat(' '\, normalize-space(@class)\, ' ')\, ' schedules-list ')]
+</code></pre>
+
+<p>The xPath can be simplified, but the nesting levels increase the speed with which the element I&rsquo;m looking for is discovered.  Additionally, the concat function along with normalize-space takes away any problems associated with similarly defined DOM objects and whitespace definition.</p>
+
+<figure class='code'><figcaption><span>simplified xPath</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//div[contains(@class),'schedules-list')]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Storing the results</h3>
+
+<p>It&rsquo;s entirely possible to simply follow the links on these pages and store nothing.  It makes things a little more complicated to store and analyze later, but I always keep a few things in mind:</p>
+
+<ol>
+<li>If things break partway through, I want as much data as possible to troubleshoot.</li>
+<li>Segmenting a project into smaller pieces is good.</li>
+<li>There may be additional information on these pages that I want to look at later.</li>
+</ol>
+
+
+<p>I&rsquo;m storing the data in mongoDB right out of the gate.  Mongo is different than most databases, in fact it doesn&rsquo;t support SQL at all.  It does allow for on the fly generation of what we normally think of as tables, and you don&rsquo;t have to define a structure.  You insert documents and the structure is based on what you insert.  That makes things very easy when you want to move quickly.  You can always build a strict SQL model later on.</p>
+
+<p>In my preliminary model, I wanted a handful of data fields.  Here is the code for putting that data into a mongo database.  Simply define the object, open a collection (a table) and insert it. I almost always leverage JodaTime rather than Java&rsquo;s built-ins.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="n">BasicDBObject</span> <span class="n">page</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BasicDBObject</span><span class="o">(</span><span class="s">&quot;html&quot;</span><span class="o">,</span> <span class="n">source</span><span class="o">)</span>
+</span><span class='line'>      <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;url&quot;</span><span class="o">,</span> <span class="n">url</span><span class="o">)</span>
+</span><span class='line'>      <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;category&quot;</span><span class="o">,</span> <span class="n">category</span><span class="o">)</span>
+</span><span class='line'>      <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;timestamp&quot;</span><span class="o">,</span> <span class="n">DateTime</span><span class="o">.</span><span class="na">now</span><span class="o">().</span><span class="na">getMillis</span><span class="o">())</span>
+</span><span class='line'>      <span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;status&quot;</span><span class="o">,</span> <span class="s">&quot;new&quot;</span><span class="o">);</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="n">DBCollection</span> <span class="n">coll</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="na">getCollection</span><span class="o">(</span><span class="n">collection</span><span class="o">);</span>
+</span><span class='line'>  <span class="n">coll</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">page</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[NFL Data - Let's Start Scraping]]></title>
