@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration on Steve Kallestad</title>
+    <link>https://nevetS.github.io/tags/configuration/</link>
+    <description>Recent content in Configuration on Steve Kallestad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 19:24:08 -0700</lastBuildDate>
+    
+      <atom:link href="https://nevetS.github.io/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Configuration files overview</title>
+        <link>https://nevetS.github.io/2019/05/27/configuration-files-overview/</link>
+        <pubDate>Mon, 27 May 2019 19:24:08 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/configuration-files-overview/</guid>
+        <description>My configuration for org-mode is reasonably complex. Reading through a long lisp file when making changes became cumbersome. I broke the configuration up into a series of files in the config/org/ path. Each file has it&amp;rsquo;s own purpose to make tracking down and updating configuration values easier.
+   File Description     config_variables.el org variable configuration   capture-templates.el templates to capture tasks   agenda.el agenda specific configuration   babel.</description>
+      </item>
+    
+      <item>
+        <title>Configuration files config_variables</title>
+        <link>https://nevetS.github.io/2019/05/30/configuration-files-config_variables/</link>
+        <pubDate>Thu, 30 May 2019 02:19:02 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/30/configuration-files-config_variables/</guid>
+        <description>The lisp file config_variables.el contains a set of org-related configuration variables. If there is some minor setup that goes along with setting the variable, that is allowed as well.
+   Variable Setting Purpose     PATH /Library/TeX/texbin: appends the latex binary to the path   org-agenda-files ~/Documents/tasks/ The location of org files that are used to build an agenda   org-agenda-log-mode-items &amp;ldquo;closed state&amp;rdquo; Show closed tasks in agenda view   org-refile-targets org-agenda-files .</description>
+      </item>
+    
+      <item>
+        <title>Configuration file: functions</title>
+        <link>https://nevetS.github.io/2019/05/27/configuration-file-functions/</link>
+        <pubDate>Mon, 27 May 2019 05:20:52 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/configuration-file-functions/</guid>
+        <description>The functions.el file within my org-mode config is simply that. Function definitions take up a lot of space, and in my org-mode config, there are a few that are very verbose. I&amp;rsquo;ve pulled them all into this file in order to make the remainder more readable.
+In here I have a set of functions from Bert Hansen&amp;rsquo;s org-mode configuration:
+   Function Purpose     bh/hide-other collapse all trees but the one you are currently working in (&amp;lt;f9&amp;gt; h)   bh/make-org-scratch create a scratch.</description>
+      </item>
+    
+      <item>
+        <title>Configuration files babel</title>
+        <link>https://nevetS.github.io/2019/05/31/configuration-files-babel/</link>
+        <pubDate>Fri, 31 May 2019 09:48:27 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/31/configuration-files-babel/</guid>
+        <description>Babel enables source blocks in org-mode. The following languages are supported by default. Additional requirements may be necessary to install. For install requirements, so the orgmode page on languages.
+The following languages are configured:
+   Language     python   shell   R   org   sql   sass   sed   awk   css   calc   gnuplot   dot (graphviz)   java   javascript (js)   lisp   makefile   browser   http    Having language support in org-mode is very powerful.</description>
+      </item>
+    
+  </channel>
+</rss>

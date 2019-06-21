@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blockdiag - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="blockdiag" />
+<meta property="og:description" content="blockdiag is a python based tool for generating block diagams. Syntax and some examples can be found in the blockdiag documentation. blockdiag also has a couple of other tools seqdiag for sequence diagrams, actdiag for activity diagrams, and nwdiag for network diagrams. Links to the documentation for those tools can be found on the blockdiag home page.
+blockdiag { default_fontsize = 13; shadow_style = none; // Set stacked to nodes, see roundedbox stacked [stacked] // standard node shapes box [shape = box]; square [shape = square]; roundedbox [shape = roundedbox, stacked]; dots [shape = dots]; circle [shape = circle]; ellipse [shape = ellipse]; diamond [shape = diamond]; minidiamond [shape = minidiamond]; note [shape = note]; mail [shape = mail]; cloud [shape = cloud]; actor [shape = actor]; beginpoint [shape = beginpoint]; endpoint [shape = endpoint]; box -&gt; square -&gt; roundedbox -&gt; dots; // group nodes group { circle; ellipse; diamond; minidiamond; // Set group-label label = &#34;example grouping&#34;; // Set background color color = &#34;#77FF77&#34; // give the group a border //shape = line; } circle -&gt; ellipse -&gt; diamond -&gt; minidiamond; note -&gt; mail -&gt; cloud -&gt; actor; beginpoint -&gt; endpoint; // node shapes for flowcharts condition [shape = flowchart." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/06/04/blockdiag/" /><meta property="article:published_time" content="2019-06-04T01:30:55-07:00"/>
+<meta property="article:modified_time" content="2019-06-04T01:30:55-07:00"/>
+
+  
+  
+<meta itemprop="name" content="blockdiag">
+<meta itemprop="description" content="blockdiag is a python based tool for generating block diagams. Syntax and some examples can be found in the blockdiag documentation. blockdiag also has a couple of other tools seqdiag for sequence diagrams, actdiag for activity diagrams, and nwdiag for network diagrams. Links to the documentation for those tools can be found on the blockdiag home page.
+blockdiag { default_fontsize = 13; shadow_style = none; // Set stacked to nodes, see roundedbox stacked [stacked] // standard node shapes box [shape = box]; square [shape = square]; roundedbox [shape = roundedbox, stacked]; dots [shape = dots]; circle [shape = circle]; ellipse [shape = ellipse]; diamond [shape = diamond]; minidiamond [shape = minidiamond]; note [shape = note]; mail [shape = mail]; cloud [shape = cloud]; actor [shape = actor]; beginpoint [shape = beginpoint]; endpoint [shape = endpoint]; box -&gt; square -&gt; roundedbox -&gt; dots; // group nodes group { circle; ellipse; diamond; minidiamond; // Set group-label label = &#34;example grouping&#34;; // Set background color color = &#34;#77FF77&#34; // give the group a border //shape = line; } circle -&gt; ellipse -&gt; diamond -&gt; minidiamond; note -&gt; mail -&gt; cloud -&gt; actor; beginpoint -&gt; endpoint; // node shapes for flowcharts condition [shape = flowchart.">
+
+
+<meta itemprop="dateModified" content="2019-06-04T01:30:55-07:00" />
+<meta itemprop="wordCount" content="232">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="blockdiag"/>
+<meta name="twitter:description" content="blockdiag is a python based tool for generating block diagams. Syntax and some examples can be found in the blockdiag documentation. blockdiag also has a couple of other tools seqdiag for sequence diagrams, actdiag for activity diagrams, and nwdiag for network diagrams. Links to the documentation for those tools can be found on the blockdiag home page.
+blockdiag { default_fontsize = 13; shadow_style = none; // Set stacked to nodes, see roundedbox stacked [stacked] // standard node shapes box [shape = box]; square [shape = square]; roundedbox [shape = roundedbox, stacked]; dots [shape = dots]; circle [shape = circle]; ellipse [shape = ellipse]; diamond [shape = diamond]; minidiamond [shape = minidiamond]; note [shape = note]; mail [shape = mail]; cloud [shape = cloud]; actor [shape = actor]; beginpoint [shape = beginpoint]; endpoint [shape = endpoint]; box -&gt; square -&gt; roundedbox -&gt; dots; // group nodes group { circle; ellipse; diamond; minidiamond; // Set group-label label = &#34;example grouping&#34;; // Set background color color = &#34;#77FF77&#34; // give the group a border //shape = line; } circle -&gt; ellipse -&gt; diamond -&gt; minidiamond; note -&gt; mail -&gt; cloud -&gt; actor; beginpoint -&gt; endpoint; // node shapes for flowcharts condition [shape = flowchart."/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-06-04 01:30:55-0700">2019-06-04</time>
+        &bull;
+          
+            
+            <a href="/categories/orgmode">ORGMODE</a>
+          
+            , 
+            <a href="/categories/diagrams">DIAGRAMS</a>
+          </small>
+      <h1>blockdiag</h1>
+    </header>
+    <section><p><code>blockdiag</code> is a python based tool for generating block diagams.  Syntax and
+some examples can be found in the <a href="http://blockdiag.com/en/blockdiag/index.html">blockdiag documentation</a>.  <code>blockdiag</code> also
+has a couple of other tools <code>seqdiag</code> for sequence diagrams, <code>actdiag</code> for
+activity diagrams, and <code>nwdiag</code> for network diagrams.  Links to the
+documentation for those tools can be found on the <a href="http://blockdiag.com/en/index.html">blockdiag home page</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-blockdiag" data-lang="blockdiag">blockdiag {
+  default_fontsize = 13;
+  shadow_style = none;
+  // Set stacked to nodes, see roundedbox
+  stacked [stacked]
+  // standard node shapes
+  box [shape = box];
+  square [shape = square];
+  roundedbox [shape = roundedbox, stacked];
+  dots [shape = dots];
+
+  circle [shape = circle];
+  ellipse [shape = ellipse];
+  diamond [shape = diamond];
+  minidiamond [shape = minidiamond];
+
+  note [shape = note];
+  mail [shape = mail];
+  cloud [shape = cloud];
+  actor [shape = actor];
+
+  beginpoint [shape = beginpoint];
+  endpoint [shape = endpoint];
+
+  box -&gt; square -&gt; roundedbox -&gt; dots;
+  // group nodes
+  group {
+    circle;
+    ellipse;
+    diamond;
+    minidiamond;
+    // Set group-label
+    label = &#34;example grouping&#34;;
+    // Set background color
+    color = &#34;#77FF77&#34;
+    // give the group a border
+    //shape = line;
+  }
+  circle -&gt; ellipse -&gt; diamond -&gt; minidiamond;
+  note -&gt; mail -&gt; cloud -&gt; actor;
+  beginpoint -&gt; endpoint;
+
+  // node shapes for flowcharts
+  condition [shape = flowchart.condition];
+  database [shape = flowchart.database];
+  terminator [shape = flowchart.terminator];
+  input [shape = flowchart.input];
+
+  loopin [shape = flowchart.loopin];
+  loopout [shape = flowchart.loopout];
+
+  condition -&gt; database -&gt; terminator -&gt; input;
+  loopin -&gt; loopout;
+}</code></pre></div>
+<figure>
+    <img src="/ox-hugo/blockdiag-sample.png"/> 
+</figure>
+
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

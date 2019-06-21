@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Steve Kallestad</title>
+    <link>https://nevetS.github.io/categories/emacs/</link>
+    <description>Recent content in Emacs on Steve Kallestad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 May 2019 01:45:40 -0700</lastBuildDate>
+    
+      <atom:link href="https://nevetS.github.io/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Leveraging my Emacs configuration</title>
+        <link>https://nevetS.github.io/2019/05/26/leveraging-my-emacs-configuration/</link>
+        <pubDate>Sun, 26 May 2019 01:45:40 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/26/leveraging-my-emacs-configuration/</guid>
+        <description>How to use my emacs configuration There are a lot of good emacs configurations out there. My configuration is borrowed from many of them. Once in a while, I&amp;rsquo;ll become frustrated with one aspect of emacs or another and I&amp;rsquo;ll look into how people have addressed it. That action tends to lead me down a rabbit hole of finding new features, workflow, and configurations that interest me. Then I build out a few changes as I merge the possibilities with my own workflow needs.</description>
+      </item>
+    
+      <item>
+        <title>Learning emacs</title>
+        <link>https://nevetS.github.io/2019/05/26/learning-emacs/</link>
+        <pubDate>Sun, 26 May 2019 15:04:55 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/26/learning-emacs/</guid>
+        <description>The hardest part of picking up emacs for me was learning to program in it. Programming tends to have deadlines, and shifting programming tasks into emacs means finding and learning all of the features that are important to you while still working under the same deadline.
+Rather than push the same bad experience on others, I think the best way of getting started is with something very simple - using org-mode for task management.</description>
+      </item>
+    
+      <item>
+        <title>Getting Things Done</title>
+        <link>https://nevetS.github.io/2019/05/26/getting-things-done/</link>
+        <pubDate>Sun, 26 May 2019 15:05:00 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/26/getting-things-done/</guid>
+        <description>David Allen developed the GTD® or Getting Things Done® Methodology and he has quite a following. There&amp;rsquo;s a book, podcasts, training classes, etc. Sadly, I haven&amp;rsquo;t researched any of it in depth. But I have taken to the quick summary of GTD® and I think that&amp;rsquo;s enough for anyone to get started:
+ Capture
+Collect what has your attention. Little or big - all your things that need to be handled.</description>
+      </item>
+    
+      <item>
+        <title>Install emacs from source on ubuntu 19.04</title>
+        <link>https://nevetS.github.io/2019/05/26/install-emacs-from-source-on-ubuntu-19.04/</link>
+        <pubDate>Sun, 26 May 2019 15:05:03 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/26/install-emacs-from-source-on-ubuntu-19.04/</guid>
+        <description>The first step is to install all of the requirements to the build:
+sudo apt install \  build-essential \ # development tools libncurses-dev libncurses5-dev \ # tools for text-based user interfaces libtiff-dev \ # image support libgif-dev \  libpng-dev \  imagemagick libmagickwand-dev imagemagick-common \  libcairo2-dev \  librsvg2-dev \  libx11-dev \ # x-windows support libgtk-3-dev \  xaw3dg-dev \  libxpm-dev \  libgconf-2-4 \  libgpm-dev \  libotf-dev \ # fonts libm17n-dev \ # multi-lingual support libgnutls28-dev \ # TLS libmailutils-dev \ # mail support mailutils \  libxml2-dev \ # xml support A few notes on the above step.</description>
+      </item>
+    
+  </channel>
+</rss>

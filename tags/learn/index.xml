@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learn on Steve Kallestad</title>
+    <link>https://nevetS.github.io/tags/learn/</link>
+    <description>Recent content in Learn on Steve Kallestad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 03:46:49 -0700</lastBuildDate>
+    
+      <atom:link href="https://nevetS.github.io/tags/learn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Organizing your files</title>
+        <link>https://nevetS.github.io/2019/05/27/organizing-your-files/</link>
+        <pubDate>Mon, 27 May 2019 03:46:49 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/organizing-your-files/</guid>
+        <description>How you organize your files with org-mode is very flexible. There are a lot of references around the web for how people organize their own files, and when it comes down to it, the structure that you fall into is very personal. Fortunately, re-organizing in org-mode is pretty straightforward.
+My configuration specifies that you use the ~/Documents/tasks directory to house these files. You can create files in that path, or you can update the configuration (in configs/org/config_variables.</description>
+      </item>
+    
+      <item>
+        <title>Capturing Tasks</title>
+        <link>https://nevetS.github.io/2019/05/27/capturing-tasks/</link>
+        <pubDate>Mon, 27 May 2019 04:46:03 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/capturing-tasks/</guid>
+        <description>What to do when you have something to do Capturing a task is as simple as using the keychord C-c c, selecting a template, and recording your task. When done recording, use the keychord C-c c again, and your task is then moved into refile.org where you can address organization later.
+The keychord C-c c is available globally within emacs (in my configuration - this is a customization, spelled out in configs/org/keybindings.</description>
+      </item>
+    
+      <item>
+        <title>Learning emacs</title>
+        <link>https://nevetS.github.io/2019/05/26/learning-emacs/</link>
+        <pubDate>Sun, 26 May 2019 15:04:55 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/26/learning-emacs/</guid>
+        <description>The hardest part of picking up emacs for me was learning to program in it. Programming tends to have deadlines, and shifting programming tasks into emacs means finding and learning all of the features that are important to you while still working under the same deadline.
+Rather than push the same bad experience on others, I think the best way of getting started is with something very simple - using org-mode for task management.</description>
+      </item>
+    
+  </channel>
+</rss>

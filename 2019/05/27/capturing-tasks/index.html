@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capturing Tasks - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="Capturing Tasks" />
+<meta property="og:description" content="What to do when you have something to do Capturing a task is as simple as using the keychord C-c c, selecting a template, and recording your task. When done recording, use the keychord C-c c again, and your task is then moved into refile.org where you can address organization later.
+The keychord C-c c is available globally within emacs (in my configuration - this is a customization, spelled out in configs/org/keybindings." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/05/27/capturing-tasks/" /><meta property="article:published_time" content="2019-05-27T04:46:03-07:00"/>
+<meta property="article:modified_time" content="2019-05-27T04:46:03-07:00"/>
+
+  
+  
+<meta itemprop="name" content="Capturing Tasks">
+<meta itemprop="description" content="What to do when you have something to do Capturing a task is as simple as using the keychord C-c c, selecting a template, and recording your task. When done recording, use the keychord C-c c again, and your task is then moved into refile.org where you can address organization later.
+The keychord C-c c is available globally within emacs (in my configuration - this is a customization, spelled out in configs/org/keybindings.">
+
+
+<meta itemprop="dateModified" content="2019-05-27T04:46:03-07:00" />
+<meta itemprop="wordCount" content="522">
+
+
+
+<meta itemprop="keywords" content="learn," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Capturing Tasks"/>
+<meta name="twitter:description" content="What to do when you have something to do Capturing a task is as simple as using the keychord C-c c, selecting a template, and recording your task. When done recording, use the keychord C-c c again, and your task is then moved into refile.org where you can address organization later.
+The keychord C-c c is available globally within emacs (in my configuration - this is a customization, spelled out in configs/org/keybindings."/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-05-27 04:46:03-0700">2019-05-27</time>
+        &bull;
+          
+            
+            <a href="/categories/orgmode">ORGMODE</a>
+          </small>
+      <h1>Capturing Tasks</h1>
+    </header>
+    <section>
+
+<h2 id="what-to-do-when-you-have-something-to-do">What to do when you have something to do</h2>
+
+<p>Capturing a task is as simple as using the keychord <code>C-c c</code>, selecting a
+template, and recording your task.  When done recording, use the keychord <code>C-c
+c</code> again, and your task is then moved into refile.org where you can address
+organization later.</p>
+
+<p>The keychord <code>C-c c</code> is available globally within emacs (in my configuration -
+this is a customization, spelled out in <code>configs/org/keybindings.el</code>).</p>
+
+<p>Capturing tasks is easy.  When getting started with org-mode, deciding on what
+tasks to capture is the hard part.  Referencing GTD®, my recommendation is to
+capture everything that&rsquo;s on your mind.  If you have to do it, capture it.</p>
+
+<p>Org-mode is flexible.  Some tasks you will want to set a deadline for.  Some
+tasks you will want to capture how much time you spent on them.  Some tasks
+you&rsquo;ll want to track when it&rsquo;s in progress and when it&rsquo;s done.  With others
+you just want to note down something you&rsquo;ve completed.  Because everything is
+text based, treating tasks differently is pretty simple.</p>
+
+<p>The best way to go about things is to keep it simple.  Start tracking tasks.
+Mark them as in progress or complete as you work on them.  Learn more advanced
+functionality as you get used to working in the system.  You aren&rsquo;t going to
+memorize 30 keybindings today.  You aren&rsquo;t going to memorize workflow.  For
+now, just remember <code>C-c c</code>.  Remember everything gets tracked in refile.org
+(until you refile it).  Work your tasks directly in refile.org for the time
+being.  When you&rsquo;ve done 10 or 20 tasks, learn how to refile them.</p>
+
+<h2 id="selecting-a-template">Selecting a template</h2>
+
+<p>After pressing <code>C-c c</code>, you are presented with a list of existing templates.</p>
+
+<figure>
+    <img src="/images/select-capture-template.png"/> 
+</figure>
+
+
+<p>You&rsquo;ll notice that there&rsquo;s a letter inside brackets (<code>[]</code>) on the left, and a
+capture template name on the right.  Press the letter of the capture template
+that you want to use.  In my experience, most tasks are going to follow the
+<code>todo</code> template, so <code>C-c c t</code> is a keychord that I have memorized.  It takes me
+effort to slow myself down enough to choose a different template.</p>
+
+<h2 id="filling-out-the-template">Filling out the template</h2>
+
+<figure>
+    <img src="/images/todo-template.png"/> 
+</figure>
+
+
+<p>Your cursor starts right after &ldquo;TODO&rdquo;.  Just start typing a description of the
+task right away.  If it&rsquo;s more than a few words, write a descriptive title and
+add more detailed text to the bottom.</p>
+
+<p>You&rsquo;ll notice a few other things in this template.  It created a &ldquo;LOGBOOK&rdquo; -
+inside the logbook is simply a timestamp.  It&rsquo;s for tracking time worked on
+tasks.  You can leave it or delete it.</p>
+
+<p>You&rsquo;ll also see a timestamp just below the logbook.  When you export task lists
+to html for sharing, the <code>:LOGBOOK:</code> and any <code>:PROPERTIES:</code> that are defined
+are generally not exported.  The timestamp within the task body is helpful for
+sharing.</p>
+
+<p>You&rsquo;ll also see a hyperlink to the source of the task.  That can be helpful or
+not.  If it won&rsquo;t be helpful, simply delete it.</p>
+
+<p>Any details can be added either right after your task title, or at the bottom
+of the buffer.
+<img src="/images/todo-example.png" alt="" /></p>
+
+<p>When you are done, <code>C-c C-c</code> again, and the task is captured to <code>refile.org</code>.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+            
+              <a href="/tags/learn">
+                <span>#</span>learn</a>
+            
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

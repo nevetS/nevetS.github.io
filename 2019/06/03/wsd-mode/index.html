@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wsd-mode - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="wsd-mode" />
+<meta property="og:description" content="wsd-mode uses websequencediagrams.com to generate sequence diagrams. A set of example diagrams is available to help you get going with building a diagram.
+You can use any of the following styles with your websequencediagram:
+ default earth magazine modern-blue mscgen napkin omegapple patent qsd rose roundgreen  You can also see details about wsd-mode at the wsd-mode source repository. The default is modern-blue. Here&rsquo;s a sample showing a simplified SAML workflow:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/06/03/wsd-mode/" /><meta property="article:published_time" content="2019-06-03T00:08:35-07:00"/>
+<meta property="article:modified_time" content="2019-06-03T00:08:35-07:00"/>
+
+  
+  
+<meta itemprop="name" content="wsd-mode">
+<meta itemprop="description" content="wsd-mode uses websequencediagrams.com to generate sequence diagrams. A set of example diagrams is available to help you get going with building a diagram.
+You can use any of the following styles with your websequencediagram:
+ default earth magazine modern-blue mscgen napkin omegapple patent qsd rose roundgreen  You can also see details about wsd-mode at the wsd-mode source repository. The default is modern-blue. Here&rsquo;s a sample showing a simplified SAML workflow:">
+
+
+<meta itemprop="dateModified" content="2019-06-03T00:08:35-07:00" />
+<meta itemprop="wordCount" content="155">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="wsd-mode"/>
+<meta name="twitter:description" content="wsd-mode uses websequencediagrams.com to generate sequence diagrams. A set of example diagrams is available to help you get going with building a diagram.
+You can use any of the following styles with your websequencediagram:
+ default earth magazine modern-blue mscgen napkin omegapple patent qsd rose roundgreen  You can also see details about wsd-mode at the wsd-mode source repository. The default is modern-blue. Here&rsquo;s a sample showing a simplified SAML workflow:"/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-06-03 00:08:35-0700">2019-06-03</time>
+        &bull;
+          
+            
+            <a href="/categories/orgmode">ORGMODE</a>
+          
+            , 
+            <a href="/categories/diagrams">DIAGRAMS</a>
+          </small>
+      <h1>wsd-mode</h1>
+    </header>
+    <section><p><code>wsd-mode</code> uses <a href="https://www.websequencediagrams.com/">websequencediagrams.com</a> to generate sequence diagrams.  A set of
+<a href="https://www.websequencediagrams.com/examples.html">example diagrams</a> is available to help you get going with building a diagram.</p>
+
+<p>You can use any of the following styles with your websequencediagram:</p>
+
+<ul>
+<li>default</li>
+<li>earth</li>
+<li>magazine</li>
+<li>modern-blue</li>
+<li>mscgen</li>
+<li>napkin</li>
+<li>omegapple</li>
+<li>patent</li>
+<li>qsd</li>
+<li>rose</li>
+<li>roundgreen</li>
+</ul>
+
+<p>You can also see details about wsd-mode at the <a href="https://github.com/josteink/wsd-mode">wsd-mode source repository</a>.
+The default is modern-blue.  Here&rsquo;s a sample showing a simplified SAML
+workflow:</p>
+
+<p>First, let&rsquo;s use a little lisp to set the style:</p>
+<div class="highlight"><pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nf">set</span> <span class="ss">&#39;wsd-style</span> <span class="o">&#39;</span><span class="s">&#34;napkin&#34;</span> <span class="p">)</span> <span class="c1">; note you have to quote the quoted value</span></code></pre></div>
+<p><code>C-c</code> to execute and you&rsquo;ll get the following result:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text">napkin</code></pre></div>
+<p>That just means that the variable has been set.</p>
+<div class="highlight"><pre class="chroma"><code class="language-wsd" data-lang="wsd">title SAML Sequence
+participant SP
+participant UA
+participant IDP
+
+UA-&gt;SP: Request Resource
+SP-&gt;UA: SSO Redirect (w/ XML payload)
+UA-&gt;IDP: Request SSO
+IDP-&gt;IDP: Validate User
+IDP-&gt;UA: (encrypted) XML Response
+UA-&gt;SP: Request Assertion Service
+SP-&gt;UA: Redirect to target
+UA-&gt;SP: Request Target
+SP-&gt;UA: Respond with Target Resource</code></pre></div>
+<figure>
+    <img src="/ox-hugo/SAML.png"/> 
+</figure>
+
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

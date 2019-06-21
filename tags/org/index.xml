@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Org on Steve Kallestad</title>
+    <link>https://nevetS.github.io/tags/org/</link>
+    <description>Recent content in Org on Steve Kallestad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 May 2019 15:05:00 -0700</lastBuildDate>
+    
+      <atom:link href="https://nevetS.github.io/tags/org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Getting Things Done</title>
+        <link>https://nevetS.github.io/2019/05/26/getting-things-done/</link>
+        <pubDate>Sun, 26 May 2019 15:05:00 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/26/getting-things-done/</guid>
+        <description>David Allen developed the GTD® or Getting Things Done® Methodology and he has quite a following. There&amp;rsquo;s a book, podcasts, training classes, etc. Sadly, I haven&amp;rsquo;t researched any of it in depth. But I have taken to the quick summary of GTD® and I think that&amp;rsquo;s enough for anyone to get started:
+ Capture
+Collect what has your attention. Little or big - all your things that need to be handled.</description>
+      </item>
+    
+  </channel>
+</rss>

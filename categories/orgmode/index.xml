@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orgmode on Steve Kallestad</title>
+    <link>https://nevetS.github.io/categories/orgmode/</link>
+    <description>Recent content in Orgmode on Steve Kallestad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 03:46:49 -0700</lastBuildDate>
+    
+      <atom:link href="https://nevetS.github.io/categories/orgmode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Organizing your files</title>
+        <link>https://nevetS.github.io/2019/05/27/organizing-your-files/</link>
+        <pubDate>Mon, 27 May 2019 03:46:49 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/organizing-your-files/</guid>
+        <description>How you organize your files with org-mode is very flexible. There are a lot of references around the web for how people organize their own files, and when it comes down to it, the structure that you fall into is very personal. Fortunately, re-organizing in org-mode is pretty straightforward.
+My configuration specifies that you use the ~/Documents/tasks directory to house these files. You can create files in that path, or you can update the configuration (in configs/org/config_variables.</description>
+      </item>
+    
+      <item>
+        <title>Capturing Tasks</title>
+        <link>https://nevetS.github.io/2019/05/27/capturing-tasks/</link>
+        <pubDate>Mon, 27 May 2019 04:46:03 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/capturing-tasks/</guid>
+        <description>What to do when you have something to do Capturing a task is as simple as using the keychord C-c c, selecting a template, and recording your task. When done recording, use the keychord C-c c again, and your task is then moved into refile.org where you can address organization later.
+The keychord C-c c is available globally within emacs (in my configuration - this is a customization, spelled out in configs/org/keybindings.</description>
+      </item>
+    
+      <item>
+        <title>plantuml</title>
+        <link>https://nevetS.github.io/2019/06/03/plantuml/</link>
+        <pubDate>Mon, 03 Jun 2019 00:07:41 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/03/plantuml/</guid>
+        <description>One resource to revisit when you see sloppy PlantUML diagrams is this StackOverflow question.
+ERD Diagrams plantuml is a bit much to get going. You need to install java, you need to download the plantuml.jar file, and you need to set the org-plantuml-jar-path variable.
+ERD diagrams are doable in plantuml, but you cannot (that I know of) link fields to one another. It might be good to generate an ERD with a full field listing for an overall view, and then another diagram that spells out field linkages.</description>
+      </item>
+    
+      <item>
+        <title>Configuration files overview</title>
+        <link>https://nevetS.github.io/2019/05/27/configuration-files-overview/</link>
+        <pubDate>Mon, 27 May 2019 19:24:08 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/configuration-files-overview/</guid>
+        <description>My configuration for org-mode is reasonably complex. Reading through a long lisp file when making changes became cumbersome. I broke the configuration up into a series of files in the config/org/ path. Each file has it&amp;rsquo;s own purpose to make tracking down and updating configuration values easier.
+   File Description     config_variables.el org variable configuration   capture-templates.el templates to capture tasks   agenda.el agenda specific configuration   babel.</description>
+      </item>
+    
+      <item>
+        <title>wsd-mode</title>
+        <link>https://nevetS.github.io/2019/06/03/wsd-mode/</link>
+        <pubDate>Mon, 03 Jun 2019 00:08:35 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/03/wsd-mode/</guid>
+        <description>wsd-mode uses websequencediagrams.com to generate sequence diagrams. A set of example diagrams is available to help you get going with building a diagram.
+You can use any of the following styles with your websequencediagram:
+ default earth magazine modern-blue mscgen napkin omegapple patent qsd rose roundgreen  You can also see details about wsd-mode at the wsd-mode source repository. The default is modern-blue. Here&amp;rsquo;s a sample showing a simplified SAML workflow:</description>
+      </item>
+    
+      <item>
+        <title>Configuration files config_variables</title>
+        <link>https://nevetS.github.io/2019/05/30/configuration-files-config_variables/</link>
+        <pubDate>Thu, 30 May 2019 02:19:02 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/30/configuration-files-config_variables/</guid>
+        <description>The lisp file config_variables.el contains a set of org-related configuration variables. If there is some minor setup that goes along with setting the variable, that is allowed as well.
+   Variable Setting Purpose     PATH /Library/TeX/texbin: appends the latex binary to the path   org-agenda-files ~/Documents/tasks/ The location of org files that are used to build an agenda   org-agenda-log-mode-items &amp;ldquo;closed state&amp;rdquo; Show closed tasks in agenda view   org-refile-targets org-agenda-files .</description>
+      </item>
+    
+      <item>
+        <title>Configuration file: functions</title>
+        <link>https://nevetS.github.io/2019/05/27/configuration-file-functions/</link>
+        <pubDate>Mon, 27 May 2019 05:20:52 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/27/configuration-file-functions/</guid>
+        <description>The functions.el file within my org-mode config is simply that. Function definitions take up a lot of space, and in my org-mode config, there are a few that are very verbose. I&amp;rsquo;ve pulled them all into this file in order to make the remainder more readable.
+In here I have a set of functions from Bert Hansen&amp;rsquo;s org-mode configuration:
+   Function Purpose     bh/hide-other collapse all trees but the one you are currently working in (&amp;lt;f9&amp;gt; h)   bh/make-org-scratch create a scratch.</description>
+      </item>
+    
+      <item>
+        <title>graphviz</title>
+        <link>https://nevetS.github.io/2019/06/03/graphviz/</link>
+        <pubDate>Mon, 03 Jun 2019 00:08:50 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/03/graphviz/</guid>
+        <description>Graphviz is probably my favorite diagram tool. Syntax required to build a diagram is pretty simple, and layout is determined by graphviz. It&amp;rsquo;s a little restrictive and hard to create some kinds of diagrams, but for a lot of simple diagrams it&amp;rsquo;s very easy to work with.
+This is a sourceblock that is named gv-pretty. I can include this by name in another sourceblock using the :noweb yes tag and then including &amp;lt;&amp;lt;gv-pretty&amp;gt;&amp;gt; where it should be included</description>
+      </item>
+    
+      <item>
+        <title>Configuration files babel</title>
+        <link>https://nevetS.github.io/2019/05/31/configuration-files-babel/</link>
+        <pubDate>Fri, 31 May 2019 09:48:27 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/05/31/configuration-files-babel/</guid>
+        <description>Babel enables source blocks in org-mode. The following languages are supported by default. Additional requirements may be necessary to install. For install requirements, so the orgmode page on languages.
+The following languages are configured:
+   Language     python   shell   R   org   sql   sass   sed   awk   css   calc   gnuplot   dot (graphviz)   java   javascript (js)   lisp   makefile   browser   http    Having language support in org-mode is very powerful.</description>
+      </item>
+    
+      <item>
+        <title>ditaa</title>
+        <link>https://nevetS.github.io/2019/06/03/ditaa/</link>
+        <pubDate>Mon, 03 Jun 2019 00:08:57 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/03/ditaa/</guid>
+        <description>ditaa allows you to build diagrams from ascii art. You have to have ditaa installed (on ubuntu sudo apt install ditaa). Syntax is on the ditaa repo page. You&amp;rsquo;ll want to update org-ditaa-jar-path appropriately (in configs/org/org_config_variables.el). Package managers will generally install it into /usr/share/ditaa/ditaa.jar. You can also use artist-mode to draw the boxes, and once drawn it&amp;rsquo;s handy to use overwrite to type inside the boxes.
++----------+	+-----------+	+------------+ +-----------\ | {io}	|	|{d}	|	| {s} c1AB	| |cBLU | | process |-----&amp;gt;|document |&amp;lt;---&amp;gt;| database	|----=&amp;gt;|regular | |	|	|	|	|	| |step | +----------+	+-----------+	+------------+ +-----------/   </description>
+      </item>
+    
+      <item>
+        <title>blockdiag</title>
+        <link>https://nevetS.github.io/2019/06/04/blockdiag/</link>
+        <pubDate>Tue, 04 Jun 2019 01:30:55 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/04/blockdiag/</guid>
+        <description>blockdiag is a python based tool for generating block diagams. Syntax and some examples can be found in the blockdiag documentation. blockdiag also has a couple of other tools seqdiag for sequence diagrams, actdiag for activity diagrams, and nwdiag for network diagrams. Links to the documentation for those tools can be found on the blockdiag home page.
+blockdiag { default_fontsize = 13; shadow_style = none; // Set stacked to nodes, see roundedbox stacked [stacked] // standard node shapes box [shape = box]; square [shape = square]; roundedbox [shape = roundedbox, stacked]; dots [shape = dots]; circle [shape = circle]; ellipse [shape = ellipse]; diamond [shape = diamond]; minidiamond [shape = minidiamond]; note [shape = note]; mail [shape = mail]; cloud [shape = cloud]; actor [shape = actor]; beginpoint [shape = beginpoint]; endpoint [shape = endpoint]; box -&amp;gt; square -&amp;gt; roundedbox -&amp;gt; dots; // group nodes group { circle; ellipse; diamond; minidiamond; // Set group-label label = &amp;#34;example grouping&amp;#34;; // Set background color color = &amp;#34;#77FF77&amp;#34; // give the group a border //shape = line; } circle -&amp;gt; ellipse -&amp;gt; diamond -&amp;gt; minidiamond; note -&amp;gt; mail -&amp;gt; cloud -&amp;gt; actor; beginpoint -&amp;gt; endpoint; // node shapes for flowcharts condition [shape = flowchart.</description>
+      </item>
+    
+      <item>
+        <title>gnuplot</title>
+        <link>https://nevetS.github.io/2019/06/03/gnuplot/</link>
+        <pubDate>Mon, 03 Jun 2019 00:09:11 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/03/gnuplot/</guid>
+        <description>gnuplot is another option for building diagrams within org-mode.
+reset set title &amp;#34;GNUPlot example&amp;#34; set xlabel &amp;#34;X&amp;#34; set xrange [-8:8] set xtics -8,2,8 set ylabel &amp;#34;Y&amp;#34; set yrange [-20:70] set ytics -20,10,70 f(x) = x**2 g(x) = x**3 h(x) = 10*sqrt(abs(x)) plot f(x) w lp lw 1, g(x) w p lw 2, h(x) w l lw 3   </description>
+      </item>
+    
+      <item>
+        <title>R</title>
+        <link>https://nevetS.github.io/2019/06/03/r/</link>
+        <pubDate>Mon, 03 Jun 2019 00:09:16 -0700</pubDate>
+        <guid>https://nevetS.github.io/2019/06/03/r/</guid>
+        <description>R can be used to generate graphs in org-mode as well.
+To display/export images, you need to add :results output graphics to your source block header.
+library(ggplot2) ggplot(mpg, aes(displ, hwy, colour = class)) + geom_point()   </description>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration files overview - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="Configuration files overview" />
+<meta property="og:description" content="My configuration for org-mode is reasonably complex. Reading through a long lisp file when making changes became cumbersome. I broke the configuration up into a series of files in the config/org/ path. Each file has it&rsquo;s own purpose to make tracking down and updating configuration values easier.
+   File Description     config_variables.el org variable configuration   capture-templates.el templates to capture tasks   agenda.el agenda specific configuration   babel." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/05/27/configuration-files-overview/" /><meta property="article:published_time" content="2019-05-27T19:24:08-07:00"/>
+<meta property="article:modified_time" content="2019-05-27T19:24:08-07:00"/>
+
+  
+  
+<meta itemprop="name" content="Configuration files overview">
+<meta itemprop="description" content="My configuration for org-mode is reasonably complex. Reading through a long lisp file when making changes became cumbersome. I broke the configuration up into a series of files in the config/org/ path. Each file has it&rsquo;s own purpose to make tracking down and updating configuration values easier.
+   File Description     config_variables.el org variable configuration   capture-templates.el templates to capture tasks   agenda.el agenda specific configuration   babel.">
+
+
+<meta itemprop="dateModified" content="2019-05-27T19:24:08-07:00" />
+<meta itemprop="wordCount" content="70">
+
+
+
+<meta itemprop="keywords" content="configuration," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuration files overview"/>
+<meta name="twitter:description" content="My configuration for org-mode is reasonably complex. Reading through a long lisp file when making changes became cumbersome. I broke the configuration up into a series of files in the config/org/ path. Each file has it&rsquo;s own purpose to make tracking down and updating configuration values easier.
+   File Description     config_variables.el org variable configuration   capture-templates.el templates to capture tasks   agenda.el agenda specific configuration   babel."/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-05-27 19:24:08-0700">2019-05-27</time>
+        &bull;
+          
+            
+            <a href="/categories/orgmode">ORGMODE</a>
+          </small>
+      <h1>Configuration files overview</h1>
+    </header>
+    <section><p>My configuration for <code>org-mode</code> is reasonably complex.  Reading through a long
+lisp file when making changes became cumbersome.  I broke the configuration up
+into a series of files in the <code>config/org/</code> path.  Each file has it&rsquo;s own
+purpose to make tracking down and updating configuration values easier.</p>
+
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>config_variables.el</td>
+<td>org variable configuration</td>
+</tr>
+
+<tr>
+<td>capture-templates.el</td>
+<td>templates to capture tasks</td>
+</tr>
+
+<tr>
+<td>agenda.el</td>
+<td>agenda specific configuration</td>
+</tr>
+
+<tr>
+<td>babel.el</td>
+<td>babel specific configuration</td>
+</tr>
+
+<tr>
+<td>tasks.el</td>
+<td>task specific configuration</td>
+</tr>
+</tbody>
+</table>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+            
+              <a href="/tags/configuration">
+                <span>#</span>configuration</a>
+            
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

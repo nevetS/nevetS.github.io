@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration files config_variables - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="Configuration files config_variables" />
+<meta property="og:description" content="The lisp file config_variables.el contains a set of org-related configuration variables. If there is some minor setup that goes along with setting the variable, that is allowed as well.
+   Variable Setting Purpose     PATH /Library/TeX/texbin: appends the latex binary to the path   org-agenda-files ~/Documents/tasks/ The location of org files that are used to build an agenda   org-agenda-log-mode-items &ldquo;closed state&rdquo; Show closed tasks in agenda view   org-refile-targets org-agenda-files ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/05/30/configuration-files-config_variables/" /><meta property="article:published_time" content="2019-05-30T02:19:02-07:00"/>
+<meta property="article:modified_time" content="2019-05-30T02:19:02-07:00"/>
+
+  
+  
+<meta itemprop="name" content="Configuration files config_variables">
+<meta itemprop="description" content="The lisp file config_variables.el contains a set of org-related configuration variables. If there is some minor setup that goes along with setting the variable, that is allowed as well.
+   Variable Setting Purpose     PATH /Library/TeX/texbin: appends the latex binary to the path   org-agenda-files ~/Documents/tasks/ The location of org files that are used to build an agenda   org-agenda-log-mode-items &ldquo;closed state&rdquo; Show closed tasks in agenda view   org-refile-targets org-agenda-files .">
+
+
+<meta itemprop="dateModified" content="2019-05-30T02:19:02-07:00" />
+<meta itemprop="wordCount" content="330">
+
+
+
+<meta itemprop="keywords" content="configuration," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuration files config_variables"/>
+<meta name="twitter:description" content="The lisp file config_variables.el contains a set of org-related configuration variables. If there is some minor setup that goes along with setting the variable, that is allowed as well.
+   Variable Setting Purpose     PATH /Library/TeX/texbin: appends the latex binary to the path   org-agenda-files ~/Documents/tasks/ The location of org files that are used to build an agenda   org-agenda-log-mode-items &ldquo;closed state&rdquo; Show closed tasks in agenda view   org-refile-targets org-agenda-files ."/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-05-30 02:19:02-0700">2019-05-30</time>
+        &bull;
+          
+            
+            <a href="/categories/orgmode">ORGMODE</a>
+          </small>
+      <h1>Configuration files config_variables</h1>
+    </header>
+    <section><p>The lisp file <code>config_variables.el</code> contains a set of org-related configuration
+variables.  If there is some minor setup that goes along with setting the
+variable, that is allowed as well.</p>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Setting</th>
+<th>Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>PATH</td>
+<td>/Library/TeX/texbin:</td>
+<td>appends the latex binary to the path</td>
+</tr>
+
+<tr>
+<td>org-agenda-files</td>
+<td>~/Documents/tasks/</td>
+<td>The location of org files that are used to build an agenda</td>
+</tr>
+
+<tr>
+<td>org-agenda-log-mode-items</td>
+<td>&ldquo;closed state&rdquo;</td>
+<td>Show closed tasks in agenda view</td>
+</tr>
+
+<tr>
+<td>org-refile-targets</td>
+<td>org-agenda-files . (:maxlevel . 3)</td>
+<td>Use the same files as org-agenda-files as refile targets</td>
+</tr>
+
+<tr>
+<td>org-directory</td>
+<td>~/Documents/tasks/</td>
+<td></td>
+</tr>
+
+<tr>
+<td>org-default-notes-file</td>
+<td>~/Documents/tasks/refile.org</td>
+<td>default capture location for tasks</td>
+</tr>
+
+<tr>
+<td>org-highest-priority</td>
+<td>?A</td>
+<td>Org-mode priorities A-E, default of C</td>
+</tr>
+
+<tr>
+<td>org-lowest-priority</td>
+<td>?E</td>
+<td></td>
+</tr>
+
+<tr>
+<td>org-default-priority</td>
+<td>?C</td>
+<td></td>
+</tr>
+
+<tr>
+<td>org-use-speed-commands</td>
+<td>t</td>
+<td>use org speed commands</td>
+</tr>
+
+<tr>
+<td>org-return-follows-link</td>
+<td>t</td>
+<td>pressing enter or clicking on a link within an org file opens it.</td>
+</tr>
+
+<tr>
+<td>auto-mode-alist</td>
+<td>&rdquo;.org,.org_archive,.txt&rdquo;</td>
+<td>use org-mode with .org, .org_archive, and .txt files</td>
+</tr>
+
+<tr>
+<td>org-log-into-drawer</td>
+<td>t</td>
+<td>timestamps for state changes are recorded into a drawer</td>
+</tr>
+
+<tr>
+<td>org-use-speed-commands</td>
+<td>t</td>
+<td>enable hotkeys when placed at the beginning of a task headline</td>
+</tr>
+</tbody>
+</table>
+
+<p>The variable last mentioned is powerful.  Place your cursor at the beginning of
+a task headline, and you have a great many options to choose from:</p>
+<div class="highlight"><pre class="chroma"><code class="language-org" data-lang="org">User-defined Speed commands
+===========================
+
+Built-in Speed commands
+=======================
+
+Outline Navigation
+------------------
+n   (org-speed-move-safe (quote org-next-visible-heading))
+p   (org-speed-move-safe (quote org-previous-visible-heading))
+f   (org-speed-move-safe (quote org-forward-heading-same-level))
+b   (org-speed-move-safe (quote org-backward-heading-same-level))
+F   org-next-block
+B   org-previous-block
+u   (org-speed-move-safe (quote outline-up-heading))
+j   org-goto
+g   (org-refile t)
+
+Outline Visibility
+------------------
+c   org-cycle
+C   org-shifttab
+    org-display-outline-path
+s   org-narrow-to-subtree
+=   org-columns
+
+Outline Structure Editing
+-------------------------
+U   org-metaup
+D   org-metadown
+r   org-metaright
+l   org-metaleft
+R   org-shiftmetaright
+L   org-shiftmetaleft
+i   (progn (forward-char <span class="k">1)</span> (call-interactively (quote org-insert-heading-respect-content)))
+^   org-sort
+w   org-refile
+a   org-archive-subtree-default-with-confirmation
+@   org-mark-subtree
+<span class="c">#   org-toggle-comment</span>
+
+Clock Commands
+--------------
+I   org-clock-in
+O   org-clock-out
+
+Meta Data Editing
+-----------------
+t   org-todo
+,   (org-priority)
+0   (org-priority 32)
+1   (org-priority 65)
+2   (org-priority 66)
+3   (org-priority 67)
+:   org-set-tags-command
+e   org-set-effort
+E   org-inc-effort
+W   (lambda (m) (interactive &#34;sMinutes before warning: &#34;) (org-entry-put (point) &#34;APPT_WARNTIME&#34; m))
+
+Agenda Views etc
+----------------
+v   org-agenda
+/   org-sparse-tree
+
+Misc
+----
+o   org-open-at-point
+?   org-speed-command-help
+&lt;<span class="s">   (org-agenda-set-restriction-lock (quote subtree))
+</span><span class="s"></span>&gt;   (org-agenda-remove-restriction-lock)</code></pre></div></section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+            
+              <a href="/tags/configuration">
+                <span>#</span>configuration</a>
+            
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/27/organizing-your-files/</loc>
+        <lastmod>2019-05-27T03:46:49-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/26/leveraging-my-emacs-configuration/</loc>
+        <lastmod>2019-05-26T01:45:40-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/27/capturing-tasks/</loc>
+        <lastmod>2019-05-27T04:46:03-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/26/learning-emacs/</loc>
+        <lastmod>2019-05-26T15:04:55-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/26/getting-things-done/</loc>
+        <lastmod>2019-05-26T15:05:00-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/26/install-emacs-from-source-on-ubuntu-19.04/</loc>
+        <lastmod>2019-05-26T15:05:03-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/03/plantuml/</loc>
+        <lastmod>2019-06-03T00:07:41-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/27/configuration-files-overview/</loc>
+        <lastmod>2019-05-27T19:24:08-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/03/wsd-mode/</loc>
+        <lastmod>2019-06-03T00:08:35-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/30/configuration-files-config_variables/</loc>
+        <lastmod>2019-05-30T02:19:02-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/27/configuration-file-functions/</loc>
+        <lastmod>2019-05-27T05:20:52-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/03/graphviz/</loc>
+        <lastmod>2019-06-03T00:08:50-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/05/31/configuration-files-babel/</loc>
+        <lastmod>2019-05-31T09:48:27-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/03/ditaa/</loc>
+        <lastmod>2019-06-03T00:08:57-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/04/blockdiag/</loc>
+        <lastmod>2019-06-04T01:30:55-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/03/gnuplot/</loc>
+        <lastmod>2019-06-03T00:09:11-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/2019/06/03/r/</loc>
+        <lastmod>2019-06-03T00:09:16-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/categories/</loc>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/tags/configuration/</loc>
+        <lastmod>2019-05-27T19:24:08-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/categories/diagrams/</loc>
+        <lastmod>2019-06-03T00:07:41-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/categories/emacs/</loc>
+        <lastmod>2019-05-26T01:45:40-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/tags/gtd/</loc>
+        <lastmod>2019-05-26T15:05:00-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/</loc>
+        <lastmod>2019-05-27T03:46:49-07:00</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/tags/install/</loc>
+        <lastmod>2019-05-26T15:05:03-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/tags/learn/</loc>
+        <lastmod>2019-05-27T03:46:49-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/tags/org/</loc>
+        <lastmod>2019-05-26T15:05:00-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/categories/orgmode/</loc>
+        <lastmod>2019-05-27T03:46:49-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/posts/</loc>
+        <lastmod>2019-05-27T03:46:49-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+    
+      <url>
+        <loc>https://nevetS.github.io/tags/</loc>
+        <lastmod>2019-05-27T19:24:08-07:00</lastmod>
+        <priority>0</priority>
+      </url>
+    
+  
+</urlset>

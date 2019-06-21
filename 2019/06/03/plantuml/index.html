@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>plantuml - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="plantuml" />
+<meta property="og:description" content="One resource to revisit when you see sloppy PlantUML diagrams is this StackOverflow question.
+ERD Diagrams plantuml is a bit much to get going. You need to install java, you need to download the plantuml.jar file, and you need to set the org-plantuml-jar-path variable.
+ERD diagrams are doable in plantuml, but you cannot (that I know of) link fields to one another. It might be good to generate an ERD with a full field listing for an overall view, and then another diagram that spells out field linkages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/06/03/plantuml/" /><meta property="article:published_time" content="2019-06-03T00:07:41-07:00"/>
+<meta property="article:modified_time" content="2019-06-03T00:07:41-07:00"/>
+
+  
+  
+<meta itemprop="name" content="plantuml">
+<meta itemprop="description" content="One resource to revisit when you see sloppy PlantUML diagrams is this StackOverflow question.
+ERD Diagrams plantuml is a bit much to get going. You need to install java, you need to download the plantuml.jar file, and you need to set the org-plantuml-jar-path variable.
+ERD diagrams are doable in plantuml, but you cannot (that I know of) link fields to one another. It might be good to generate an ERD with a full field listing for an overall view, and then another diagram that spells out field linkages.">
+
+
+<meta itemprop="dateModified" content="2019-06-03T00:07:41-07:00" />
+<meta itemprop="wordCount" content="342">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="plantuml"/>
+<meta name="twitter:description" content="One resource to revisit when you see sloppy PlantUML diagrams is this StackOverflow question.
+ERD Diagrams plantuml is a bit much to get going. You need to install java, you need to download the plantuml.jar file, and you need to set the org-plantuml-jar-path variable.
+ERD diagrams are doable in plantuml, but you cannot (that I know of) link fields to one another. It might be good to generate an ERD with a full field listing for an overall view, and then another diagram that spells out field linkages."/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-06-03 00:07:41-0700">2019-06-03</time>
+        &bull;
+          
+            
+            <a href="/categories/orgmode">ORGMODE</a>
+          
+            , 
+            <a href="/categories/diagrams">DIAGRAMS</a>
+          </small>
+      <h1>plantuml</h1>
+    </header>
+    <section>
+
+<p>One resource to revisit when you see sloppy PlantUML diagrams is this <a href="https://stackoverflow.com/questions/48712801/how-to-correct-plantuml-line-path/48735216#48735216">StackOverflow question</a>.</p>
+
+<h2 id="erd-diagrams">ERD Diagrams</h2>
+
+<p><code>plantuml</code> is a bit much to get going.  You need to install java, you need
+to <a href="http://plantuml.com/download">download the plantuml.jar</a> file, and you need to set the
+<code>org-plantuml-jar-path</code> variable.</p>
+
+<p>ERD diagrams are doable in plantuml, but you cannot (that I know of) link
+fields to one another.  It might be good to generate an ERD with a full field
+listing for an overall view, and then another diagram that spells out field linkages.</p>
+
+<p>First, we set the path to plantuml.jar</p>
+<div class="highlight"><pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-plantuml-jar-path</span> <span class="o">&#39;</span><span class="s">&#34;~/windows/plantuml/plantuml.jar&#34;</span><span class="p">)</span></code></pre></div>
+<p>Then we define our diagram</p>
+<div class="highlight"><pre class="chroma"><code class="language-plantuml" data-lang="plantuml">skinparam monochrome true
+skinparam shadowing false
+
+hide circle
+hide empty members
+
+title All Fields
+entity email {
+   * pkid
+   * email2user
+   * email
+}
+entity user {
+   * pkid
+   --
+   * username
+   first
+   last
+}
+entity phone {
+   * pkid
+   * phone2user
+   * phone
+}
+
+email}-||user
+user||-{phone</code></pre></div>
+<figure>
+    <img src="/ox-hugo/class_diagram.png"/> 
+</figure>
+
+
+<p>Now we define our linkage:</p>
+<div class="highlight"><pre class="chroma"><code class="language-plantuml" data-lang="plantuml">skinparam monochrome true
+skinparam shadowing false
+
+hide circle
+
+
+title Foreign keys
+entity user {
+  * pkid
+
+}
+entity email {
+  * email2user
+
+}
+entity phone {
+  * phone2user
+
+}
+email}-||user
+user||-{phone</code></pre></div>
+<figure>
+    <img src="/ox-hugo/crows-feet.png"/> 
+</figure>
+
+
+<p>Even with only one field, the crows feet don&rsquo;t line up perfectly, but at least
+you get to see the relationships.</p>
+
+<h2 id="sequence-diagrams">Sequence Diagrams</h2>
+
+<p>You can also do sequence diagrams</p>
+<div class="highlight"><pre class="chroma"><code class="language-plantuml" data-lang="plantuml">skinparam monochrome true
+ Foo -&gt; Bar: synchronous call
+ Foo -&gt;&gt; Bar: asynchronous call</code></pre></div>
+<figure>
+    <img src="/ox-hugo/sequence_diagram.png"/> 
+</figure>
+
+
+<h2 id="use-case-diagrams">Use case diagrams</h2>
+
+<p>And use case diagrams:</p>
+<div class="highlight"><pre class="chroma"><code class="language-plantuml" data-lang="plantuml">left to right direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam packageStyle rect
+actor customer
+actor clerk
+rectangle checkout {
+  customer -- (checkout)
+  (checkout) .&gt; (payment) : include
+  (help) .&gt; (checkout) : extends
+  (checkout) -- clerk
+}</code></pre></div>
+<figure>
+    <img src="/ox-hugo/usecase_diagram.png"/> 
+</figure>
+
+
+<h2 id="class-diagrams">class diagrams</h2>
+
+<p>You can build  class diagrams:</p>
+<div class="highlight"><pre class="chroma"><code class="language-plantuml" data-lang="plantuml">skinparam monochrome true
+skinparam shadowing false
+
+interface Command {
+    execute()
+    undo()
+}
+class Invoker{
+    setCommand()
+}
+class Client
+class Receiver{
+    action()
+}
+class ConcreteCommand{
+    execute()
+    undo()
+}
+
+Command &lt;|-down- ConcreteCommand
+Client -right-&gt; Receiver
+Client --&gt; ConcreteCommand
+Invoker o-right-&gt; Command
+Receiver &lt;-left- ConcreteCommand</code></pre></div>
+<figure>
+    <img src="/ox-hugo/diagram_class.png"/> 
+</figure>
+
+
+<h2 id="and-more">and more</h2>
+
+<p>There are many diagrams you can create with plantuml.  You can see examples and
+example source code and <a href="https://real-world-plantuml.com/">real-world-plantuml.com</a>.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

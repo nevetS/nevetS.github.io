@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning emacs - Steve Kallestad</title>
+  <meta name="author" content="Steve Kallestad">
+  <meta name="description" content="A blog about everything.">
+
+  <meta name="generator" content="Hugo 0.52" />
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/assets/css/external.min.css" media="screen">
+
+  
+  
+  <link rel="stylesheet" href="/assets/css/styles.css" media="screen">
+
+  <link href="//fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
+
+  
+  
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/src/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/src/images/favicon.ico">
+
+  
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Steve Kallestad" />
+
+  <meta property="og:title" content="Learning emacs" />
+<meta property="og:description" content="The hardest part of picking up emacs for me was learning to program in it. Programming tends to have deadlines, and shifting programming tasks into emacs means finding and learning all of the features that are important to you while still working under the same deadline.
+Rather than push the same bad experience on others, I think the best way of getting started is with something very simple - using org-mode for task management." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nevetS.github.io/2019/05/26/learning-emacs/" /><meta property="article:published_time" content="2019-05-26T15:04:55-07:00"/>
+<meta property="article:modified_time" content="2019-05-26T15:04:55-07:00"/>
+
+  
+  
+<meta itemprop="name" content="Learning emacs">
+<meta itemprop="description" content="The hardest part of picking up emacs for me was learning to program in it. Programming tends to have deadlines, and shifting programming tasks into emacs means finding and learning all of the features that are important to you while still working under the same deadline.
+Rather than push the same bad experience on others, I think the best way of getting started is with something very simple - using org-mode for task management.">
+
+
+<meta itemprop="dateModified" content="2019-05-26T15:04:55-07:00" />
+<meta itemprop="wordCount" content="398">
+
+
+
+<meta itemprop="keywords" content="learn," />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learning emacs"/>
+<meta name="twitter:description" content="The hardest part of picking up emacs for me was learning to program in it. Programming tends to have deadlines, and shifting programming tasks into emacs means finding and learning all of the features that are important to you while still working under the same deadline.
+Rather than push the same bad experience on others, I think the best way of getting started is with something very simple - using org-mode for task management."/>
+
+</head>
+
+  <body>
+    
+      <nav>
+  <a href="/" title="Homepage">
+    Steve
+  </a>
+</nav>
+
+    
+    <main class="container">
+      
+  <article>
+    <header>
+      <small>
+        <time datetime="2019-05-26 15:04:55-0700">2019-05-26</time>
+        &bull;
+          
+            
+            <a href="/categories/emacs">EMACS</a>
+          </small>
+      <h1>Learning emacs</h1>
+    </header>
+    <section><p>The hardest part of picking up emacs for me was learning to program in it.
+Programming tends to have deadlines, and shifting programming tasks into emacs
+means finding and learning all of the features that are important to you while
+still working under the same deadline.</p>
+
+<p>Rather than push the same bad experience on others, I think the best way of
+getting started is with something very simple - using org-mode for task
+management.  Over the years, I&rsquo;ve seen a hundred different task management
+tools and workflows.  People have made careers out of it.  And yet, every tool
+that I&rsquo;ve seen is lacking in major ways.</p>
+
+<p>I recommend getting started with personal task management - outside of the
+workplace - and moving on from there.  Here&rsquo;s why:</p>
+
+<ol>
+<li>It&rsquo;s a good introduction to the emacs interface.</li>
+<li>It&rsquo;s a small time and attention consumer.</li>
+<li>Learning can be at a comfortable pace.</li>
+<li>Like much of emacs, the initially introduced feature-set is small and easy
+to comprehend, but the real power comes from practice, learning about the
+possibilities, and applying those possibilities to your day-to-day.</li>
+</ol>
+
+<p>The first thing to do is install emacs.  Personally, in my Windows environment
+I run emacs in a VirtualBox VM in seamless mode (I use Xubuntu because it works
+well with seamless mode).  I do that because little things pop up that are only
+problems in Windows.  It may or may not be a problem for you.  It may or may
+not be a problem in 2019.  But it has been a problem for me in the past and
+that&rsquo;s how I&rsquo;ve chosen to deal with it.</p>
+
+<p>In OS/X and on Linux, I use a native version.  I compile my own.  The packaged
+binaries are pretty good too, but they don&rsquo;t always have the latest and
+greatest features enabled.  The <a href="https://www.gnu.org/software/emacs/">GNU Emacs page</a> has downloads available.  On
+your first run (and until you get around to making changes to your
+configuration), you will see a link to the Emacs Tutorial.  It covers
+navigation, how to interact with files, how to find help.  It&rsquo;s well written
+and has evolved over a long period of time (decades maybe).  Run through the
+tutorial a few times to gain a comfort level with the basics and when you are
+comfortable, come back to my org-mode configuration and tutorials.</p>
+
+<p>If you want to compile your own emacs, I have instructions for Ubuntu.</p>
+</section>
+    <footer>
+      <hr>
+      <div class="meta">
+        <p class="tags">
+          
+            
+              <a href="/tags/learn">
+                <span>#</span>learn</a>
+            
+          
+        </p>
+      </div>
+      <hr>
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "test" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </footer>
+  </article>
+
+    </main>
+    
+      <footer>
+  <p>
+    &copy; 2019 Steve Kallestad.
+  </p>
+  <p>
+  </p>
+</footer>
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="/assets/js/scripts.min.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Steve Kallestad</title>
+    <link>https://nevetS.github.io/tags/</link>
+    <description>Recent content in Tags on Steve Kallestad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 May 2019 19:24:08 -0700</lastBuildDate>
+    
+      <atom:link href="https://nevetS.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>Configuration</title>
+        <link>https://nevetS.github.io/tags/configuration/</link>
+        <pubDate>Mon, 27 May 2019 19:24:08 -0700</pubDate>
+        <guid>https://nevetS.github.io/tags/configuration/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>Gtd</title>
+        <link>https://nevetS.github.io/tags/gtd/</link>
+        <pubDate>Sun, 26 May 2019 15:05:00 -0700</pubDate>
+        <guid>https://nevetS.github.io/tags/gtd/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>Install</title>
+        <link>https://nevetS.github.io/tags/install/</link>
+        <pubDate>Sun, 26 May 2019 15:05:03 -0700</pubDate>
+        <guid>https://nevetS.github.io/tags/install/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>Learn</title>
+        <link>https://nevetS.github.io/tags/learn/</link>
+        <pubDate>Mon, 27 May 2019 03:46:49 -0700</pubDate>
+        <guid>https://nevetS.github.io/tags/learn/</guid>
+        <description></description>
+      </item>
+    
+      <item>
+        <title>Org</title>
+        <link>https://nevetS.github.io/tags/org/</link>
+        <pubDate>Sun, 26 May 2019 15:05:00 -0700</pubDate>
+        <guid>https://nevetS.github.io/tags/org/</guid>
+        <description></description>
+      </item>
+    
+  </channel>
+</rss>

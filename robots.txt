@@ -1,4 +1,1 @@
 User-agent: *
-Disallow: 
-
-Sitemap: http://nevetS.github.io/sitemap.xml 
